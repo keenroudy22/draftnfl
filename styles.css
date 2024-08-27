@@ -1,0 +1,27 @@
+.draft-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.team-option {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.team-option:hover {
+    background-color: #0056b3;
+}
+
+.team-option:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
