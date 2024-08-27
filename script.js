@@ -27,14 +27,12 @@ function createPlayerDiv(player) {
 }
 
 function createDraftOptions() {
-    console.log("Creating draft options...");
     const allTeams = shuffle([...afcTeams, ...nfcTeams]);
     const options = allTeams.map(team => `<button class="team-option">${team}</button>`).join('');
     return `<div class="draft-options">${options}</div>`;
 }
 
 function startDraft() {
-    console.log("Start Draft button clicked");
     document.getElementById('draftContainer').innerHTML = createDraftOptions();
     document.querySelectorAll('.team-option').forEach(button => {
         button.addEventListener('click', handleTeamSelection);
@@ -59,7 +57,6 @@ function handleTeamSelection(event) {
 }
 
 function moveToNextPlayer() {
-    console.log("Moving to next player...");
     if (isReversed) {
         currentPlayerIndex--;
         if (currentPlayerIndex < 0) {
@@ -91,6 +88,5 @@ function shuffle(array) {
     return array;
 }
 
-// Initialize the draft UI
 document.getElementById('playerContainer').innerHTML = players.map(createPlayerDiv).join('');
 document.getElementById('randomButton').addEventListener('click', startDraft);
