@@ -48,7 +48,7 @@ function handleTeamSelection(event) {
 
     for (let i = 1; i <= 2; i++) {
         const box = document.getElementById(`${player}-${conference}${i}`);
-        if (box.textContent === '') {
+        if (box && box.textContent === '') {
             box.textContent = selectedTeam;
             event.target.disabled = true;
             break;
@@ -88,7 +88,7 @@ function shuffle(array) {
         currentIndex--;
         [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
     }
-    return array;  // Make sure to return the shuffled array
+    return array;
 }
 
 // Initialize the draft UI
